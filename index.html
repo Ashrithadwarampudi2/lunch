@@ -1,447 +1,320 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Commvault Weekly Lunch Portal</title>
+
+    <title>Commvault Lunch Portal</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
+
 </head>
 
 <body>
 
-    <!-- HEADER -->
-
-    <header>
-        <div class="logo">
-            <span class="logo-box">Commvault</span>
-            Lunch Portal
-        </div>
-
-        <nav>
-            <a href="#" onclick="switchPage('home')">Home</a>
-            <a href="#" onclick="switchPage('menu')">Menu</a>
-            <a href="#" onclick="switchPage('survey')">Survey</a>
-
-            <button class="btn-contact">
-                Contact
-            </button>
-        </nav>
-    </header>
-
-   <!-- HOME PAGE -->
-
-<div id="page-home" class="page-panel active">
-
-    <!-- HERO SECTION -->
-
-    <section class="hero">
-
-        <div class="hero-content">
-
-            <div class="hero-text">
-
-                <h1>Weekly Lunch Portal</h1>
-
-                <p class="carousel-subtext">
-                    View weekly menus, stay informed, and submit your lunch selections in one convenient location.
-                </p>
-
-                <button
-                    class="btn-primary"
-                    onclick="switchPage('menu')">
-                    View This Week's Menu
-                </button>
-
-            </div>
-
-            <div class="hero-image-container">
-
-                <img
-                    src="images/Imageforhero.png"
-                    alt="Lunch Options"
-                    class="hero-image">
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- FEATURES SECTION -->
-
-    <section class="features-section">
-
-        <h2 class="section-title">
-            All In One Place
-        </h2>
-
-        <div class="features-grid">
-
-            <div
-                class="feature-card"
-                onclick="switchPage('menu')">
-
-                <div class="icon-placeholder">
-                    
-                </div>
-
-                <h3>
-                    Weekly Menu
-                </h3>
-
-                <p>
-                    Browse lunch options available throughout the week.
-                </p>
-
-            </div>
-
-            <div
-                class="feature-card"
-                onclick="switchPage('survey')">
-
-                <div class="icon-placeholder">
-                    
-                </div>
-
-                <h3>
-                    Submit Orders
-                </h3>
-
-                <p>
-                    Submit your lunch choices and help us plan accurate catering counts.
-                </p>
-
-            </div>
-
-            <div class="feature-card">
-
-                <div class="icon-placeholder">
-                    
-                </div>
-
-                <h3>
-                    Stay Updated
-                </h3>
-
-                <p>
-                    Receive important menu announcements, reminders, and office lunch updates.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-</div>
-
-    <!-- MENU PAGE -->
-
-    <div id="page-menu" class="page-panel">
-
-        <section class="menu-container">
-
-            <h1 class="menu-main-title">
-                Weekly Lunch Menu
-            </h1>
-
-            <p class="menu-date-range">
-                June 29 – July 2, 2026
-            </p>
-
-            <div class="menu-days-grid">
-
-                <div class="day-card">
-
-                    <h3>Monday</h3>
-
-                    <ol>
-                        <li>Maurizio's Pizza</li>
-                        <li>Vegetarian Pizza</li>
-                        <li>Fresh Salad</li>
-                        <li>Beverages</li>
-                    </ol>
-
-                </div>
-
-                <div class="day-card">
-
-                    <h3>Tuesday</h3>
-
-                    <ol>
-                        <li>Chicken Parmesan</li>
-                        <li>Eggplant Parmesan</li>
-                        <li>Garlic Bread</li>
-                        <li>Fruit Cups</li>
-                    </ol>
-
-                </div>
-
-                <div class="day-card">
-
-                    <h3>Wednesday</h3>
-
-                    <ol>
-                        <li>Taco Bell Lunch</li>
-                        <li>Veg & Non-Veg Options</li>
-                        <li>Rice & Beans</li>
-                        <li>Churros</li>
-                    </ol>
-
-                </div>
-
-                <div class="day-card">
-
-                    <h3>Thursday</h3>
-
-                    <ol>
-                        <li>Chinese Buffet</li>
-                        <li>Veg & Non-Veg Selection</li>
-                        <li>Spring Rolls</li>
-                        <li>Dessert</li>
-                    </ol>
-
-                </div>
-
-                <div class="day-card">
-
-                    <h3>Friday</h3>
-
-                    <ol>
-                        <li>Holiday</li>
-                        <li>No Lunch Service</li>
-                        <li>Office Closes Early</li>
-                        <li>Enjoy Your Weekend</li>
-                    </ol>
-
-                </div>
-
-            </div>
-
-            <button
-                class="btn-primary space-top"
-                onclick="switchPage('survey')">
-
-                Submit Lunch Selection
-
-            </button>
-
-        </section>
-
-    </div>
-
-    <!-- SURVEY PAGE -->
-
-    <div id="page-survey" class="page-panel">
-
-        <section class="survey-container">
-
-            <h2>
-                Lunch Selection Survey
-            </h2>
-
-            <p class="survey-subtext">
-                Select your meal preferences for each available lunch day.
-            </p>
-
-            <div class="survey-mock-frame">
-
-                <form
-                    id="lunchSurveyForm"
-                    onsubmit="handleSurveySubmit(event)">
-
-                    <div class="form-group">
-
-                        <h4>
-                            Wednesday, July 1 - Taco Bell
-                        </h4>
-
-                        <div class="radio-option">
-                            <input type="radio" name="wed" required>
-                            <label>Vegetarian</label>
-                        </div>
-
-                        <div class="radio-option">
-                            <input type="radio" name="wed">
-                            <label>Non-Vegetarian</label>
-                        </div>
-
-                        <div class="radio-option">
-                            <input type="radio" name="wed">
-                            <label>Skip</label>
-                        </div>
-
-                    </div>
-
-                    <div class="form-group">
-
-                        <h4>
-                            Thursday, July 2 - Chinese Buffet
-                        </h4>
-
-                        <div class="radio-option">
-                            <input type="radio" name="thu" required>
-                            <label>Vegetarian</label>
-                        </div>
-
-                        <div class="radio-option">
-                            <input type="radio" name="thu">
-                            <label>Non-Vegetarian</label>
-                        </div>
-
-                        <div class="radio-option">
-                            <input type="radio" name="thu">
-                            <label>Half & Half</label>
-                        </div>
-
-                        <div class="radio-option">
-                            <input type="radio" name="thu">
-                            <label>Skip</label>
-                        </div>
+    <!-- PREFERENCE MODAL -->
+
+    <div class="modal fade"
+         id="preferenceModal"
+         data-bs-backdrop="static"
+         data-bs-keyboard="false"
+         tabindex="-1">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content text-center border-0 p-4">
+
+                <div class="modal-body">
+
+                    <h3 class="fw-bold mb-3">
+                        Welcome to the Lunch Portal
+                    </h3>
+
+                    <p class="text-secondary mb-4">
+                        What are your preferences?
+                    </p>
+
+                    <div class="d-grid gap-2">
+
+                        <input type="radio"
+                               class="btn-check"
+                               name="dietPreference"
+                               id="prefVeg"
+                               value="Vegetarian">
+
+                        <label class="btn btn-outline-custom"
+                               for="prefVeg">
+                             Vegetarian
+                        </label>
+
+                        <input type="radio"
+                               class="btn-check"
+                               name="dietPreference"
+                               id="prefNonVeg"
+                               value="Non-Vegetarian">
+
+                        <label class="btn btn-outline-custom"
+                               for="prefNonVeg">
+                             Non-Vegetarian
+                        </label>
+
+                        <input type="radio"
+                               class="btn-check"
+                               name="dietPreference"
+                               id="prefBoth"
+                               value="Both"
+                               checked>
+
+                        <label class="btn btn-outline-custom"
+                               for="prefBoth">
+                             Both
+                        </label>
 
                     </div>
 
                     <button
-                        type="submit"
-                        class="btn-submit">
-
-                        Submit Survey
-
+                        id="submitPreferenceBtn"
+                        class="btn btn-primary-action mt-4 px-4">
+                        Continue
                     </button>
 
-                </form>
+                </div>
 
             </div>
 
-        </section>
+        </div>
 
     </div>
 
-    <!-- FOOTER -->
+    <!-- NAVBAR -->
 
-    <footer>
+    <nav class="navbar navbar-expand-lg custom-navbar py-3">
 
-        <div>
+        <div class="container">
 
-            <span class="logo-box logo-footer">
-                Commvault
-            </span>
+            
+<a class="navbar-brand text-white fw-bold d-flex align-items-center"
+   href="index.html">
 
-        </div>
+    <img src="images/commvault-logo.svg"
+         alt="Commvault Logo"
+         class="navbar-logo me-2">
 
-        <div class="footer-links">
+    Commvault
 
-            <h4 class="footer-heading">
-                Quick Links
-            </h4>
+</a>
 
-            <p>
-                <a href="#" onclick="switchPage('home')">
+
+            <div class="navbar-nav mx-auto d-flex flex-row gap-4">
+
+                <a class="nav-link active-link"
+                   href="index.html">
                     Home
                 </a>
-            </p>
 
-            <p>
-                <a href="#" onclick="switchPage('menu')">
+                <a class="nav-link text-white-50"
+                   href="menu.html">
                     Menu
                 </a>
-            </p>
 
-            <p>
-                <a href="#" onclick="switchPage('survey')">
+                <a class="nav-link text-white-50"
+                   href="survey.html">
                     Survey
                 </a>
-            </p>
+
+                <a class="nav-link text-white-50"
+                   href="contact.html">
+                    Contact
+                </a>
+
+            </div>
 
         </div>
 
-        <div>
+    </nav>
 
-            <h4 class="footer-heading">
-                Questions?
-            </h4>
+    <!-- HERO -->
 
-            <p class="footer-subtext">
-                Contact the lunch coordination team.
-            </p>
+    <section class="hero-section py-5">
+
+        <div class="container">
+
+            <div class="hero-card">
+
+                <div class="row align-items-center">
+
+                    <div class="col-lg-6">
+
+                        <h1 class="display-5 fw-bold mb-3">
+                            Weekly Lunch Portal
+                        </h1>
+
+                        <p class="lead mb-4">
+                            View weekly lunch menus, choose your meal
+                            preferences, and submit food orders in one place.
+                        </p>
+
+                        <div class="d-flex gap-3 flex-wrap">
+
+                            <a href="menu.html"
+                               class="btn btn-primary-action px-4">
+                                View Menu
+                            </a>
+
+                            <a href="survey.html"
+                               class="btn btn-dark-action px-4">
+                                Fill Out Survey
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-6 text-center">
+
+                        <img src="images/Imageforhero.png"
+                             alt="Lunch Options"
+                             class="hero-image">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FEATURES -->
+
+    <section class="py-5">
+
+        <div class="container">
+
+            <h2 class="text-center fw-bold mb-5">
+                Everything In One Place
+            </h2>
+
+            <div class="row g-4">
+
+                <div class="col-md-4">
+
+                    <div class="card h-100 border-0 shadow-sm p-4 text-center">
+
+                        <h2></h2>
+
+                        <h5 class="fw-bold mt-3">
+                            Weekly Menu
+                        </h5>
+
+                        <p>
+                            Browse lunch offerings for each day.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="card h-100 border-0 shadow-sm p-4 text-center">
+
+                        <h2></h2>
+
+                        <h5 class="fw-bold mt-3">
+                            Submit Orders
+                        </h5>
+
+                        <p>
+                            Select your preferred meals quickly.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="card h-100 border-0 shadow-sm p-4 text-center">
+
+                        <h2></h2>
+
+                        <h5 class="fw-bold mt-3">
+                            Stay Updated
+                        </h5>
+
+                        <p>
+                            Get notices about menu changes and deadlines.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer class="custom-footer py-5 text-white">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <h5 class="fw-bold">
+                        Commvault Lunch Portal
+                    </h5>
+
+                    <p class="text-white-50">
+                        Internal lunch ordering portal.
+                    </p>
+
+                </div>
+
+                <div class="col-md-6 text-md-end">
+
+                    <h6>Quick Links</h6>
+
+                    <a href="index.html"
+                       class="text-white-50 text-decoration-none d-block">
+                        Home
+                    </a>
+
+                    <a href="menu.html"
+                       class="text-white-50 text-decoration-none d-block">
+                        Menu
+                    </a>
+
+                    <a href="survey.html"
+                       class="text-white-50 text-decoration-none d-block">
+                        Survey
+                    </a>
+
+                    <a href="contact.html"
+                       class="text-white-50 text-decoration-none d-block">
+                        Contact
+                    </a>
+
+                </div>
+
+            </div>
 
         </div>
 
     </footer>
 
-    <!-- WELCOME MODAL -->
-
-<div id="welcomeModal" class="modal-overlay">
-
-    <div class="modal-content">
-
-        <h2 class="modal-title">
-            Welcome to the Lunch Portal
-        </h2>
-
-        <p>
-            Choose your dietary preference.
-        </p>
-
-        <div class="preference-cards">
-
-            <div class="pref-card"
-                 onclick="selectPreference('veg', this)">
-                <div class="emoji"></div>
-                <h4>Vegetarian</h4>
-            </div>
-
-            <div class="pref-card"
-                 onclick="selectPreference('nonveg', this)">
-                <div class="emoji"></div>
-                <h4>Non-Vegetarian</h4>
-            </div>
-
-            <div class="pref-card"
-                 onclick="selectPreference('both', this)">
-                <div class="emoji"></div>
-                <h4>Both</h4>
-            </div>
-
-        </div>
-
-        <button class="btn-primary wide-btn"
-                onclick="savePreference()">
-            Continue
-        </button>
-
-    </div>
-
-</div>
-
-    <!-- THANK YOU MODAL -->
-
-    <div
-        id="thankYouModal"
-        class="modal-overlay"
-        style="display:none;">
-
-        <div class="modal-content">
-
-            <h2 class="success-title">
-                Thank You!
-            </h2>
-
-            <p>
-                Your lunch selections have been submitted successfully.
-            </p>
-
-            <button
-                class="btn-primary"
-                onclick="goToHome()">
-
-                Return Home
-
-            </button>
-
-        </div>
-
-    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="script.js"></script>
 

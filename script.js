@@ -1,177 +1,108 @@
-// PAGE NAVIGATION
-function switchPage(pageId) {
-    document.querySelectorAll(".page-panel").forEach(panel => {
-        panel.classList.remove("active");
-    });
+// =======================================================
+// COMMVAULT LUNCH PORTAL
+// =======================================================
 
-    const targetPage = document.getElementById("page-" + pageId);
+document.addEventListener("DOMContentLoaded", () => {
 
-    if (targetPage) {
-        targetPage.classList.add("active");
-    }
+    // ==========================================
+    // PREFERENCE MODAL
+    // ==========================================
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-}
+    const preferenceModal =
+        document.getElementById("preferenceModal");
 
-// CLOSE MODAL
-function closeModal(modalId) {
-    const modal = document.getElementById(modalId);
+    const submitPreferenceBtn =
+        document.getElementById("submitPreferenceBtn");
 
-    if (modal) {
-        modal.style.display = "none";
-    }
-}
+    if (preferenceModal && submitPreferenceBtn) {
 
-// PREFERENCE SYSTEM
-let selectedPreference = null;
+        const savedPreference =
+            localStorage.getItem("dietPreference");
 
-// Show modal when page loads
-window.onload = function () {
+        if (!savedPreference) {
 
-    const savedPreference =
-        localStorage.getItem("foodPreference");
+            const modal =
+                new bootstrap.Modal(preferenceModal);
 
-    if (savedPreference) {
+            modal.show();
+        }
 
-        selectedPreference = savedPreference;
+        submitPreferenceBtn.addEventListener("click", () => {
 
-        document.getElementById("welcomeModal").style.display = "none";
+            const selectedOption =
+                document.querySelector(
+                    'input[name="dietPreference"]:checked'
+                );
 
-    } else {
+            if (!selectedOption) {
 
-        document.getElementById("welcomeModal").style.display = "flex";
-    }
-};
+                alert("Please select a preference.");
 
-// Select a card
-function selectPreference(preference, element) {
+                return;
+            }
 
-    selectedPreference = preference;
+            localStorage.setItem(
+                "dietPreference",
+                selectedOption.value
+            );
 
-    document.querySelectorAll(".pref-card")
-        .forEach(card => {
-            card.classList.remove("selected");
+            const modal =
+                bootstrap.Modal.getInstance(
+                    preferenceModal
+                );
+
+            if (modal) {
+                modal.hide();
+            }
         });
-
-    element.classList.add("selected");
-}
-
-// Continue button
-function savePreference() {
-
-    if (selectedPreference === null) {
-
-        alert("Please select a preference.");
-
-        return;
     }
 
-    localStorage.setItem(
-        "foodPreference",
-        selectedPreference
+    // ==========================================
+    // SURVEY FORM
+    // ==========================================
+
+    const surveyForm =
+        document.getElementById("lunchOrderForm");
+
+    const successModal =
+        document.getElementById("successModal");
+
+    if (surveyForm && successModal) {
+
+        surveyForm.addEventListener("submit", (event) => {
+
+            event.preventDefault();
+
+            const modal =
+                new bootstrap.Modal(successModal);
+
+            modal.show();
+
+            surveyForm.reset();
+
+        });
+    }
+
+});
+
+// =======================================================
+// HELPER FUNCTIONS
+// =======================================================
+
+function getUserPreference() {
+
+    return localStorage.getItem(
+        "dietPreference"
+    );
+}
+
+function resetPreference() {
+
+    localStorage.removeItem(
+        "dietPreference"
     );
 
-    document.getElementById("welcomeModal").style.display = "none";
+    alert(
+        "Food preference has been cleared."
+    );
 }
-
-// Page switching
-function switchPage(pageId) {
-
-    document.querySelectorAll(".page-panel")
-        .forEach(panel => {
-            panel.classList.remove("active");
-        });
-
-    const page =
-        document.getElementById("page-" + pageId);
-
-    if (page) {
-        page.classList.add("active");
-    }
-}
-
-// Close modal helper
-function closeModal(modalId) {
-
-    const modal =
-        document.getElementById(modalId);
-
-    if (modal) {
-        modal.style.display = "none";
-    }
-}
-
-// Survey submit
-function handleSurveySubmit(event) {
-
-    event.preventDefault();
-
-    document.getElementById(
-        "thankYouModal"
-    ).style.display = "flex";
-}
-
-// Return Home
-function goToHome() {
-
-    document.getElementById(
-        "thankYouModal"
-    ).style.display = "none";
-
-    switchPage("home");
-}
-// SURVEY SUBMIT
-function handleSurveySubmit(event) {
-    event.preventDefault();
-
-    const thankYouModal =
-        document.getElementById("thankYouModal");
-
-    if (thankYouModal) {
-        thankYouModal.style.display = "flex";
-    }
-}
-
-// RETURN HOME
-function goToHome() {
-    closeModal("thankYouModal");
-
-    switchPage("home");
-
-    const form =
-        document.getElementById("lunchSurveyForm");
-
-    if (form) {
-        form.reset();
-    }
-}
-
-// RESET PREFERENCE (OPTIONAL)
-function resetPreference() {
-    localStorage.removeItem("foodPreference");
-
-    selectedPreference = null;
-
-    const modal = document.getElementById("welcomeModal");
-
-    if (modal) {
-        modal.style.display = "flex";
-    }
-}
-
-// CONTACT BUTTON
-document.addEventListener("DOMContentLoaded", () => {
-    const contactButton =
-        document.querySelector(".btn-contact");
-
-    if (contactButton) {
-        contactButton.addEventListener("click", () => {
-            alert(
-                "For lunch questions, please contact the lunch coordination team."
-            );
-        });
-    }
-});
