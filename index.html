@@ -6,195 +6,444 @@
     <title>Commvault Weekly Lunch Portal</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+
+    <!-- HEADER -->
 
     <header>
         <div class="logo">
-            <span class="logo-box">Commvault</span> Lunch Portal
+            <span class="logo-box">Commvault</span>
+            Lunch Portal
         </div>
+
         <nav>
             <a href="#" onclick="switchPage('home')">Home</a>
             <a href="#" onclick="switchPage('menu')">Menu</a>
             <a href="#" onclick="switchPage('survey')">Survey</a>
-            <button class="btn-contact">Contact</button>
+
+            <button class="btn-contact">
+                Contact
+            </button>
         </nav>
     </header>
 
-    <div id="page-home" class="page-panel active">
-        <section class="hero">
-            <div class="carousel-box">
-                <h2>Weekly Lunch Portal</h2>
-                <p class="carousel-subtext">View this week's menu and submit your lunch preferences in one convenient location.</p>
-                <div class="icon-large">🖼️</div>
-                <button class="btn-primary" onclick="switchPage('menu')">Menu for this week</button>
-            </div>
-        </section>
+   <!-- HOME PAGE -->
 
-        <h2 class="section-title">All in one place</h2>
-        <section class="features-grid">
-            <div class="feature-card" onclick="switchPage('menu')">
-                <div class="icon-placeholder">🖼️</div>
-                <h3>View Weekly Menu</h3>
-                <p>Check out the delicious lunch options planned for this week!</p>
+<div id="page-home" class="page-panel active">
+
+    <!-- HERO SECTION -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-text">
+
+                <h1>Weekly Lunch Portal</h1>
+
+                <p class="carousel-subtext">
+                    View weekly menus, stay informed, and submit your lunch selections in one convenient location.
+                </p>
+
+                <button
+                    class="btn-primary"
+                    onclick="switchPage('menu')">
+                    View This Week's Menu
+                </button>
+
             </div>
-            <div class="feature-card" onclick="switchPage('survey')">
-                <div class="icon-placeholder">🖼️</div>
-                <h3>Fill out survey</h3>
-                <p>Let us know your preferences quickly</p>
+
+            <div class="hero-image-container">
+
+                <img
+                    src="images/Imageforhero.png"
+                    alt="Lunch Options"
+                    class="hero-image">
+
             </div>
+
+        </div>
+
+    </section>
+
+    <!-- FEATURES SECTION -->
+
+    <section class="features-section">
+
+        <h2 class="section-title">
+            All In One Place
+        </h2>
+
+        <div class="features-grid">
+
+            <div
+                class="feature-card"
+                onclick="switchPage('menu')">
+
+                <div class="icon-placeholder">
+                    
+                </div>
+
+                <h3>
+                    Weekly Menu
+                </h3>
+
+                <p>
+                    Browse lunch options available throughout the week.
+                </p>
+
+            </div>
+
+            <div
+                class="feature-card"
+                onclick="switchPage('survey')">
+
+                <div class="icon-placeholder">
+                    
+                </div>
+
+                <h3>
+                    Submit Orders
+                </h3>
+
+                <p>
+                    Submit your lunch choices and help us plan accurate catering counts.
+                </p>
+
+            </div>
+
             <div class="feature-card">
-                <div class="icon-placeholder">🖼️</div>
-                <h3>Stay updated</h3>
-                <p>Get notified about menu changes, important announcements, and lunch-related updates</p>
+
+                <div class="icon-placeholder">
+                    
+                </div>
+
+                <h3>
+                    Stay Updated
+                </h3>
+
+                <p>
+                    Receive important menu announcements, reminders, and office lunch updates.
+                </p>
+
             </div>
-        </section>
-    </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+    <!-- MENU PAGE -->
 
     <div id="page-menu" class="page-panel">
+
         <section class="menu-container">
-            <h1 class="menu-main-title">This weeks Menu</h1>
-            <p class="menu-date-range">June 29 - July 2, 2026</p>
-            <hr class="divider">
+
+            <h1 class="menu-main-title">
+                Weekly Lunch Menu
+            </h1>
+
+            <p class="menu-date-range">
+                June 29 – July 2, 2026
+            </p>
 
             <div class="menu-days-grid">
+
                 <div class="day-card">
+
                     <h3>Monday</h3>
-                    <p class="day-icon">🖼️</p>
+
                     <ol>
-                        <li>Maurizio's Pizza & Salad</li>
-                        <li>Vegetarian Selection Alternative</li>
-                        <li>Fresh Side Greens</li>
-                        <li>Assorted Beverages</li>
+                        <li>Maurizio's Pizza</li>
+                        <li>Vegetarian Pizza</li>
+                        <li>Fresh Salad</li>
+                        <li>Beverages</li>
                     </ol>
+
                 </div>
+
                 <div class="day-card">
+
                     <h3>Tuesday</h3>
-                    <p class="day-icon">🖼️</p>
+
                     <ol>
-                        <li>Eggplant Parm / Chicken Parm</li>
-                        <li>South Indian Selection Only</li>
-                        <li>Garlic Breadsticks</li>
-                        <li>Fresh Fruit Cups</li>
+                        <li>Chicken Parmesan</li>
+                        <li>Eggplant Parmesan</li>
+                        <li>Garlic Bread</li>
+                        <li>Fruit Cups</li>
                     </ol>
+
                 </div>
+
                 <div class="day-card">
+
                     <h3>Wednesday</h3>
-                    <p class="day-icon">🖼️</p>
+
                     <ol>
-                        <li>Taco Bell Platter Mix</li>
-                        <li>Hard & Soft Shell Alternatives</li>
-                        <li>Refried Beans & Rice</li>
-                        <li>Churros Dessert Station</li>
+                        <li>Taco Bell Lunch</li>
+                        <li>Veg & Non-Veg Options</li>
+                        <li>Rice & Beans</li>
+                        <li>Churros</li>
                     </ol>
+
                 </div>
+
                 <div class="day-card">
+
                     <h3>Thursday</h3>
-                    <p class="day-icon">🖼️</p>
+
                     <ol>
-                        <li>Chinese Buffet Night Style</li>
-                        <li>Half & Half (Veg / Non-Veg)</li>
-                        <li>Spring Rolls & Dumplings</li>
-                        <li>Fortune Cookies Variety</li>
+                        <li>Chinese Buffet</li>
+                        <li>Veg & Non-Veg Selection</li>
+                        <li>Spring Rolls</li>
+                        <li>Dessert</li>
                     </ol>
+
                 </div>
+
                 <div class="day-card">
+
                     <h3>Friday</h3>
-                    <p class="day-icon">🖼️</p>
+
                     <ol>
-                        <li>HOLIDAY - NO FOOD</li>
+                        <li>Holiday</li>
+                        <li>No Lunch Service</li>
                         <li>Office Closes Early</li>
-                        <li>Enjoy your long weekend!</li>
-                        <li>See you next Monday</li>
+                        <li>Enjoy Your Weekend</li>
                     </ol>
+
                 </div>
+
             </div>
 
-            <button class="btn-primary space-top" onclick="switchPage('survey')">Fill out survey</button>
-            <p class="deadline-text">Please fill out the form by-----</p>
+            <button
+                class="btn-primary space-top"
+                onclick="switchPage('survey')">
+
+                Submit Lunch Selection
+
+            </button>
+
         </section>
+
     </div>
+
+    <!-- SURVEY PAGE -->
 
     <div id="page-survey" class="page-panel">
+
         <section class="survey-container">
-            <h2>Food Order Week of June 29 2026</h2>
-            <p class="survey-subtext">Please pick Veg/Non Veg/Half+Half/Decline so that we can get the exact count.</p>
+
+            <h2>
+                Lunch Selection Survey
+            </h2>
+
+            <p class="survey-subtext">
+                Select your meal preferences for each available lunch day.
+            </p>
 
             <div class="survey-mock-frame">
-                <form id="lunchSurveyForm" onsubmit="handleSurveySubmit(event)">
-                   
+
+                <form
+                    id="lunchSurveyForm"
+                    onsubmit="handleSurveySubmit(event)">
+
                     <div class="form-group">
-                        <h4>1. Monday June 29, 12 PM: Maurizio's Pizza & Salad <span class="accent-rose">(NO MORE CHANGES)</span></h4>
+
+                        <h4>
+                            Wednesday, July 1 - Taco Bell
+                        </h4>
+
+                        <div class="radio-option">
+                            <input type="radio" name="wed" required>
+                            <label>Vegetarian</label>
+                        </div>
+
+                        <div class="radio-option">
+                            <input type="radio" name="wed">
+                            <label>Non-Vegetarian</label>
+                        </div>
+
+                        <div class="radio-option">
+                            <input type="radio" name="wed">
+                            <label>Skip</label>
+                        </div>
+
                     </div>
 
                     <div class="form-group">
-                        <h4>2. Tuesday, June 30, 12 PM: Eggplant Parm/Chicken Parm **OR** South Indian ONLY <span class="accent-rose">(NO MORE CHANGES)</span></h4>
+
+                        <h4>
+                            Thursday, July 2 - Chinese Buffet
+                        </h4>
+
+                        <div class="radio-option">
+                            <input type="radio" name="thu" required>
+                            <label>Vegetarian</label>
+                        </div>
+
+                        <div class="radio-option">
+                            <input type="radio" name="thu">
+                            <label>Non-Vegetarian</label>
+                        </div>
+
+                        <div class="radio-option">
+                            <input type="radio" name="thu">
+                            <label>Half & Half</label>
+                        </div>
+
+                        <div class="radio-option">
+                            <input type="radio" name="thu">
+                            <label>Skip</label>
+                        </div>
+
                     </div>
 
-                    <div class="form-group">
-                        <h4>3. Wednesday, July 1, 12 PM: Taco Bell <span class="accent-rose">(NO MORE CHANGES) *</span></h4>
-                        <div class="radio-option"><input type="radio" name="wed" required id="w-veg"> <label for="w-veg">1 serving veg</label></div>
-                        <div class="radio-option"><input type="radio" name="wed" id="w-non"> <label for="w-non">1 serving non-veg</label></div>
-                        <div class="radio-option"><input type="radio" name="wed" id="w-skip"> <label for="w-skip">I will skip this</label></div>
-                    </div>
+                    <button
+                        type="submit"
+                        class="btn-submit">
 
-                    <div class="form-group">
-                        <h4>4. Thursday, July 2, 12 PM: Chinese (Half & Half, Veg, Non-veg) *</h4>
-                        <div class="radio-option"><input type="radio" name="thu" required id="t-half"> <label for="t-half">1/2 serving veg *AND* 1/2 serving non-veg</label></div>
-                        <div class="radio-option"><input type="radio" name="thu" id="t-veg"> <label for="t-veg">1 serving veg</label></div>
-                        <div class="radio-option"><input type="radio" name="thu" id="t-non"> <label for="t-non">1 serving non-veg</label></div>
-                        <div class="radio-option"><input type="radio" name="thu" id="t-skip"> <label for="t-skip">I will skip this</label></div>
-                    </div>
+                        Submit Survey
 
-                    <div class="form-group">
-                        <h4>5. Friday, July 3: HOLIDAY - NO FOOD</h4>
-                    </div>
+                    </button>
 
-                    <button type="submit" class="btn-submit">Submit</button>
                 </form>
+
             </div>
+
         </section>
+
     </div>
+
+    <!-- FOOTER -->
 
     <footer>
+
         <div>
-            <span class="logo-box logo-footer">Commvault</span>
+
+            <span class="logo-box logo-footer">
+                Commvault
+            </span>
+
         </div>
+
         <div class="footer-links">
-            <h4 class="footer-heading">Quick Links</h4>
-            <p><a href="#" onclick="switchPage('home')">• Home</a></p>
-            <p><a href="#" onclick="switchPage('menu')">• Menu</a></p>
-            <p><a href="#" onclick="switchPage('survey')">• Survey</a></p>
+
+            <h4 class="footer-heading">
+                Quick Links
+            </h4>
+
+            <p>
+                <a href="#" onclick="switchPage('home')">
+                    Home
+                </a>
+            </p>
+
+            <p>
+                <a href="#" onclick="switchPage('menu')">
+                    Menu
+                </a>
+            </p>
+
+            <p>
+                <a href="#" onclick="switchPage('survey')">
+                    Survey
+                </a>
+            </p>
+
         </div>
+
         <div>
-            <h4 class="footer-heading">Questions?</h4>
-            <p class="footer-subtext">Email of people that take care of the lunch menus</p>
+
+            <h4 class="footer-heading">
+                Questions?
+            </h4>
+
+            <p class="footer-subtext">
+                Contact the lunch coordination team.
+            </p>
+
         </div>
+
     </footer>
 
-    <div id="welcomeModal" class="modal-overlay">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('welcomeModal')">&times;</button>
-            <h3 class="modal-title">Welcome to the lunch portal!</h3>
-            <p>What are your preferences?</p>
-            <div class="preference-options">
-                <div class="radio-option"><input type="radio" name="pref" id="p-veg"> <label for="p-veg">-Vegetarian</label></div>
-                <div class="radio-option"><input type="radio" name="pref" id="p-non"> <label for="p-non">-Non-Vegetarian</label></div>
-                <div class="radio-option"><input type="radio" name="pref" id="p-both"> <label for="p-both">-Both</label></div>
+    <!-- WELCOME MODAL -->
+
+<div id="welcomeModal" class="modal-overlay">
+
+    <div class="modal-content">
+
+        <h2 class="modal-title">
+            Welcome to the Lunch Portal
+        </h2>
+
+        <p>
+            Choose your dietary preference.
+        </p>
+
+        <div class="preference-cards">
+
+            <div class="pref-card"
+                 onclick="selectPreference('veg', this)">
+                <div class="emoji"></div>
+                <h4>Vegetarian</h4>
             </div>
-            <button class="btn-primary wide-btn" onclick="closeModal('welcomeModal')">Continue</button>
-            <p class="modal-hint">As soon as they open the page this popup will open, in which they need to choose their preference so the page shows those options only.</p>
+
+            <div class="pref-card"
+                 onclick="selectPreference('nonveg', this)">
+                <div class="emoji"></div>
+                <h4>Non-Vegetarian</h4>
+            </div>
+
+            <div class="pref-card"
+                 onclick="selectPreference('both', this)">
+                <div class="emoji"></div>
+                <h4>Both</h4>
+            </div>
+
         </div>
+
+        <button class="btn-primary wide-btn"
+                onclick="savePreference()">
+            Continue
+        </button>
+
     </div>
 
-    <div id="thankYouModal" class="modal-overlay" style="display: none;">
-        <div class="modal-content thank-you-border">
-            <button class="modal-close" onclick="closeModal('thankYouModal')">&times;</button>
-            <h3 class="success-title">Thank You!</h3>
-            <p>Your lunch selections have been recorded!</p>
-            <button class="btn-primary midnight-bg space-top" onclick="goToHome()">[ Return Home ]</button>
+</div>
+
+    <!-- THANK YOU MODAL -->
+
+    <div
+        id="thankYouModal"
+        class="modal-overlay"
+        style="display:none;">
+
+        <div class="modal-content">
+
+            <h2 class="success-title">
+                Thank You!
+            </h2>
+
+            <p>
+                Your lunch selections have been submitted successfully.
+            </p>
+
+            <button
+                class="btn-primary"
+                onclick="goToHome()">
+
+                Return Home
+
+            </button>
+
         </div>
+
     </div>
 
     <script src="script.js"></script>
+
 </body>
 </html>
