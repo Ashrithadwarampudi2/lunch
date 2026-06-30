@@ -35,9 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 );
 
             if (!selectedOption) {
-
-                alert("Please select a preference.");
-
                 return;
             }
 
@@ -54,33 +51,107 @@ document.addEventListener("DOMContentLoaded", () => {
             if (modal) {
                 modal.hide();
             }
+
         });
+
     }
 
     // ==========================================
-    // SURVEY FORM
+    // SURVEY PAGE
     // ==========================================
 
     const surveyForm =
         document.getElementById("lunchOrderForm");
 
-    const successModal =
+    const surveySuccessModal =
         document.getElementById("successModal");
 
-    if (surveyForm && successModal) {
+    if (surveyForm && surveySuccessModal) {
 
         surveyForm.addEventListener("submit", (event) => {
 
             event.preventDefault();
 
             const modal =
-                new bootstrap.Modal(successModal);
+                new bootstrap.Modal(
+                    surveySuccessModal
+                );
 
             modal.show();
 
             surveyForm.reset();
 
         });
+
+    }
+
+    // ==========================================
+    // CONTACT PAGE
+    // ==========================================
+
+    const contactForm =
+        document.getElementById("contactForm");
+
+    const contactSuccessModal =
+        document.getElementById("contactSuccessModal");
+
+    if (contactForm && contactSuccessModal) {
+
+        contactForm.addEventListener("submit", (event) => {
+
+            event.preventDefault();
+
+            const modal =
+                new bootstrap.Modal(
+                    contactSuccessModal
+                );
+
+            modal.show();
+
+            contactForm.reset();
+
+        });
+
+    }
+
+    // ==========================================
+    // LUNCH NOTIFICATION SIGNUP
+    // ==========================================
+
+    const updatesForm =
+        document.getElementById("updatesForm");
+
+    const subscribeSuccessModal =
+        document.getElementById(
+            "subscribeSuccessModal"
+        );
+
+    if (updatesForm && subscribeSuccessModal) {
+
+        updatesForm.addEventListener("submit", (event) => {
+
+            event.preventDefault();
+
+            const updatesModal =
+                bootstrap.Modal.getInstance(
+                    document.getElementById("updatesModal")
+                );
+
+            if (updatesModal) {
+                updatesModal.hide();
+            }
+
+            const successModal =
+                new bootstrap.Modal(
+                    subscribeSuccessModal
+                );
+
+            successModal.show();
+
+            updatesForm.reset();
+
+        });
+
     }
 
 });
@@ -94,6 +165,7 @@ function getUserPreference() {
     return localStorage.getItem(
         "dietPreference"
     );
+
 }
 
 function resetPreference() {
@@ -102,7 +174,4 @@ function resetPreference() {
         "dietPreference"
     );
 
-    alert(
-        "Food preference has been cleared."
-    );
 }
