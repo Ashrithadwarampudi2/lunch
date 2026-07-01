@@ -175,3 +175,27 @@ function resetPreference() {
     );
 
 }
+// ==========================================
+    // STAY UPDATED OFFCANVAS
+    // ==========================================
+
+    if (!localStorage.getItem("stayUpdatedPrompt")) {
+
+        setTimeout(() => {
+
+            const stayUpdatedCanvas =
+                new bootstrap.Offcanvas(
+                    document.getElementById("stayUpdatedCanvas")
+                );
+
+            stayUpdatedCanvas.show();
+
+            localStorage.setItem(
+                "stayUpdatedPrompt",
+                "shown"
+            );
+
+        }, 5000);
+
+    }
+
