@@ -728,13 +728,12 @@ body{
         ),
         url("images/images/Surveyimg.png");
 
-    background-size:cover;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
-    background-position:center;
-
-    background-repeat:no-repeat;
-
-    padding:180px 0;
+      padding: 200px;
+      height:300px;
 }
 /* Responsive container to embed your live survey link directly */
       .embed-container {

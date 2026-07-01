@@ -56,35 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    // ==========================================
-    // SURVEY PAGE
-    // ==========================================
-
-    const surveyForm =
-        document.getElementById("lunchOrderForm");
-
-    const surveySuccessModal =
-        document.getElementById("successModal");
-
-    if (surveyForm && surveySuccessModal) {
-
-        surveyForm.addEventListener("submit", (event) => {
-
-            event.preventDefault();
-
-            const modal =
-                new bootstrap.Modal(
-                    surveySuccessModal
-                );
-
-            modal.show();
-
-            surveyForm.reset();
-
-        });
-
-    }
-
+   
     // ==========================================
     // CONTACT PAGE
     // ==========================================
