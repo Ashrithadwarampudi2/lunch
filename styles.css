@@ -244,12 +244,40 @@ body{
 ========================================================== */
 
 .survey-section{
-    background:var(--fog);
-}
 
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(132,72,150,.20),
+            transparent 450px
+        ),
+
+        radial-gradient(
+            circle at bottom left,
+            rgba(54,187,244,.18),
+            transparent 450px
+        ),
+
+        linear-gradient(
+            180deg,
+            #fafbff,
+            #f2f3f8
+        );
+
+    min-height:100vh;
+}
 .survey-card-wrapper{
-    border-radius:var(--radius-lg);
-    box-shadow:var(--shadow-lg);
+
+    background:rgba(255,255,255,.92) !important;
+
+    border-radius:32px;
+
+    border:1px solid rgba(255,255,255,.7);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.12);
+
+    backdrop-filter:blur(10px);
 }
 
 .survey-item label{
@@ -691,3 +719,46 @@ body{
         0 10px 25px rgba(0,0,0,.08);
 }
 
+.survey-hero{
+
+    background:
+        linear-gradient(
+            rgba(0,5,59,.35),
+            rgba(0,5,59,.35)
+        ),
+        url("images/images/Surveyimg.png");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    padding:180px 0;
+}
+/* Responsive container to embed your live survey link directly */
+      .embed-container {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 900px;
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255,255,255,.6);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.12);
+}
+        .embed-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }

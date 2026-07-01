@@ -154,6 +154,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
+    // ==========================================
+    // STAY UPDATED OFFCANVAS
+    // ==========================================
+
+    const stayUpdatedCanvas =
+        document.getElementById("stayUpdatedCanvas");
+
+    if (
+        stayUpdatedCanvas &&
+        localStorage.getItem("dietPreference") &&
+        !localStorage.getItem("stayUpdatedPrompt")
+    ) {
+
+        setTimeout(() => {
+
+            const offcanvas =
+                new bootstrap.Offcanvas(
+                    stayUpdatedCanvas
+                );
+
+            offcanvas.show();
+
+            localStorage.setItem(
+                "stayUpdatedPrompt",
+                "shown"
+            );
+
+        }, 5000);
+
+    }
+
 });
 
 // =======================================================
@@ -175,27 +206,11 @@ function resetPreference() {
     );
 
 }
-// ==========================================
-    // STAY UPDATED OFFCANVAS
-    // ==========================================
 
-    if (!localStorage.getItem("stayUpdatedPrompt")) {
+function resetStayUpdatedPrompt() {
 
-        setTimeout(() => {
+    localStorage.removeItem(
+        "stayUpdatedPrompt"
+    );
 
-            const stayUpdatedCanvas =
-                new bootstrap.Offcanvas(
-                    document.getElementById("stayUpdatedCanvas")
-                );
-
-            stayUpdatedCanvas.show();
-
-            localStorage.setItem(
-                "stayUpdatedPrompt",
-                "shown"
-            );
-
-        }, 5000);
-
-    }
-
+}
