@@ -70,6 +70,17 @@ body{
     background:var(--midnight);
     box-shadow:var(--shadow-sm);
 }
+.navbar-toggler{
+
+    border:1px solid rgba(255,255,255,.25);
+
+    background:white;
+}
+
+.navbar-toggler:focus{
+
+    box-shadow:none;
+}
 
 .logo-box{
     width:24px;
@@ -106,10 +117,6 @@ body{
     height:55px;
     width:auto;
     display:block;
-
-    background:var(--white);
-    padding:6px;
-    border-radius:12px;
 }
 
 /* ==========================================================
@@ -732,8 +739,11 @@ body{
     background-position: center;
     background-repeat: no-repeat;
 
-      padding: 200px;
-      height:300px;
+    height: 220px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 /* Responsive container to embed your live survey link directly */
       .embed-container {
@@ -761,3 +771,57 @@ body{
             height: 100%;
             border: 0;
         }
+
+        @media (max-width: 991px){
+
+    .navbar-collapse{
+
+        margin-top:15px;
+
+        text-align:center;
+    }
+
+    .navbar-nav{
+
+        gap:10px;
+    }
+
+    .nav-link{
+
+        padding:10px 0;
+    }
+
+}
+
+.navbar-toggler{
+
+    background:white;
+
+    border:none;
+}
+
+.navbar-toggler:focus{
+
+    box-shadow:none;
+}
+
+@media (max-width:991px){
+
+    .navbar-collapse{
+
+        margin-top:15px;
+
+        text-align:center;
+    }
+
+    .navbar-nav{
+
+        align-items:center;
+    }
+
+    .navbar-logo{
+
+        height:40px;
+    }
+
+}
