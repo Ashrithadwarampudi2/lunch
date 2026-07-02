@@ -38,7 +38,7 @@
            <span class="text-dark fw-bold fs-4">
     ☰
 </span>
-`
+
 
         </button>
 
@@ -105,204 +105,316 @@
                 Food Order Week of July 6, 2026
             </h2>
 
+<div class="d-flex justify-content-between align-items-center mb-4">
+
+    <div id="preferenceBadge"
+         class="alert alert-info mb-0 flex-grow-1 me-3">
+    </div>
+
+    <button
+    class="btn btn-outline-secondary"
+    data-bs-toggle="modal"
+    data-bs-target="#preferenceModal">
+
+    Change Preference
+
+</button>
+</div>
+
+
             <p class="text-secondary mb-5">
                 Please pick Veg / Non-Veg / Skip so that we can get an accurate count.
             </p>
 
             <form id="lunchSurveyForm">
 
-                <div class="mb-5">
+    <!-- MONDAY -->
 
-                    <h4 class="fw-bold">
-                        Monday - Papa John's Pizza
-                    </h4>
+    <div class="survey-question">
 
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="monday" value="Veg">
-                        <label class="form-check-label">Cheese Pizza</label>
-                    </div>
+        <h4 class="fw-bold">
+            Monday - Papa John's Pizza
+        </h4>
 
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="monday" value="Chicken">
-                        <label class="form-check-label">Chicken Pizza</label>
-                    </div>
+        <div class="form-check">
 
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="monday" value="Meat Lovers">
-                        <label class="form-check-label">Meat Lovers Pizza</label>
-                    </div>
+            <input class="form-check-input"
+                   type="radio"
+                   id="mondayVeg"
+                   name="monday"
+                   value="Veg">
 
-                </div>
+            <label class="form-check-label"
+                   for="mondayVeg">
 
-                <div class="mb-5">
+                Cheese Pizza
 
-                    <h4 class="fw-bold">
-                        Tuesday - Pasta / South Indian
-                    </h4>
+            </label>
 
-                    <select class="form-select">
+        </div>
 
-                        <option>Half Veg Pasta + Half Chicken Pasta</option>
+        <div class="form-check">
 
-                        <option>Veg Pasta Only</option>
+            <input class="form-check-input"
+                   type="radio"
+                   id="mondayChicken"
+                   name="monday"
+                   value="Chicken">
 
-                        <option>Chicken Pasta Only</option>
+            <label class="form-check-label"
+                   for="mondayChicken">
 
-                        <option>South Indian (Veg)</option>
+                Chicken Pizza
 
-                        <option>Skip</option>
+            </label>
 
-                    </select>
+        </div>
 
-                </div>
+        <div class="form-check">
 
-                <div class="mb-5">
+            <input class="form-check-input"
+                   type="radio"
+                   id="mondayMeat"
+                   name="monday"
+                   value="Meat Lovers">
 
-                    <h4 class="fw-bold">
-                        Wednesday - Mediterranean
-                    </h4>
+            <label class="form-check-label"
+                   for="mondayMeat">
 
-                    <select class="form-select">
+                Meat Lovers Pizza
 
-                        <option>Half Veg + Half Non-Veg</option>
+            </label>
 
-                        <option>Veg Only</option>
+        </div>
 
-                        <option>Non-Veg Only</option>
+    </div>
 
-                        <option>Skip</option>
+    <!-- TUESDAY -->
 
-                    </select>
+    <div class="survey-question">
 
-                </div>
+        <h4 class="fw-bold">
+            Tuesday - Pasta / South Indian
+        </h4>
 
-                <div class="mb-5">
+        <select class="form-select"
+                id="tuesdayChoice">
 
-                    <h4 class="fw-bold">
-                        Thursday - Samosa & Dhokla
-                    </h4>
+            <option value="both">
+                Half Veg Pasta + Half Chicken Pasta
+            </option>
 
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="thursday">
-                        <label class="form-check-label">
-                            1 Serving
-                        </label>
-                    </div>
+            <option value="veg">
+                Veg Pasta Only
+            </option>
 
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="thursday">
-                        <label class="form-check-label">
-                            Skip
-                        </label>
-                    </div>
+            <option value="nonveg">
+                Chicken Pasta Only
+            </option>
 
-                </div>
+            <option value="southIndian">
+                South Indian (Veg)
+            </option>
 
-                <div class="mb-5">
+            <option value="skip">
+                Skip
+            </option>
 
-                    <h4 class="fw-bold">
-                        Friday Breakfast Bagels
-                    </h4>
+        </select>
 
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="bagels">
-                        <label class="form-check-label">
-                            Yes, Count Me In
-                        </label>
-                    </div>
+    </div>
 
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="bagels">
-                        <label class="form-check-label">
-                            Skip
-                        </label>
-                    </div>
+    <!-- WEDNESDAY -->
 
-                </div>
+    <div class="survey-question">
 
-                <div class="mb-5">
+        <h4 class="fw-bold">
+            Wednesday - Mediterranean
+        </h4>
 
-                    <h4 class="fw-bold">
-                        Friday Sushi (Choose Up To 3)
-                    </h4>
+        <select class="form-select"
+                id="wednesdayChoice">
 
-                    <div class="form-check">
-                        <input class="form-check-input sushi-option" type="checkbox">
-                        <label class="form-check-label">
-                            Sweet Potato Roll
-                        </label>
-                    </div>
+            <option value="both">
+                Half Veg + Half Non-Veg
+            </option>
 
-                    <div class="form-check">
-                        <input class="form-check-input sushi-option" type="checkbox">
-                        <label class="form-check-label">
-                            Avocado Roll
-                        </label>
-                    </div>
+            <option value="veg">
+                Veg Only
+            </option>
 
-                    <div class="form-check">
-                        <input class="form-check-input sushi-option" type="checkbox">
-                        <label class="form-check-label">
-                            Pumpkin Tempura Roll
-                        </label>
-                    </div>
+            <option value="nonveg">
+                Non-Veg Only
+            </option>
 
-                    <div class="form-check">
-                        <input class="form-check-input sushi-option" type="checkbox">
-                        <label class="form-check-label">
-                            Shrimp & Avocado Roll
-                        </label>
-                    </div>
+            <option value="skip">
+                Skip
+            </option>
 
-                    <div class="form-check">
-                        <input class="form-check-input sushi-option" type="checkbox">
-                        <label class="form-check-label">
-                            Tuna Roll
-                        </label>
-                    </div>
+        </select>
 
-                </div>
+    </div>
 
-                <div class="mb-5">
+    <!-- THURSDAY -->
 
-                    <h4 class="fw-bold">
-                        Friday Ice Cream Social
-                    </h4>
+    <div class="survey-question">
 
-                    <div class="form-check">
+        <h4 class="fw-bold">
+            Thursday - Samosa & Dhokla
+        </h4>
 
-                        <input class="form-check-input"
-                               type="radio"
-                               name="icecream">
+        <div class="form-check">
 
-                        <label class="form-check-label">
-                            Yes, Count Me In
-                        </label>
+            <input class="form-check-input"
+                   type="radio"
+                   name="thursday">
 
-                    </div>
+            <label class="form-check-label">
+                1 Serving
+            </label>
 
-                    <div class="form-check">
+        </div>
 
-                        <input class="form-check-input"
-                               type="radio"
-                               name="icecream">
+        <div class="form-check">
 
-                        <label class="form-check-label">
-                            Skip
-                        </label>
+            <input class="form-check-input"
+                   type="radio"
+                   name="thursday">
 
-                    </div>
+            <label class="form-check-label">
+                Skip
+            </label>
 
-                </div>
+        </div>
 
-                <button type="submit"
-                        class="btn btn-primary-action px-5 py-3">
+    </div>
 
-                    Submit Lunch Order
+    <!-- FRIDAY BAGELS -->
 
-                </button>
+   <div class="survey-question">
 
-            </form>
+        <h4 class="fw-bold">
+            Friday Breakfast Bagels
+        </h4>
+
+        <div class="form-check">
+
+            <input class="form-check-input"
+                   type="radio"
+                   name="bagels">
+
+            <label class="form-check-label">
+                Yes, Count Me In
+            </label>
+
+        </div>
+
+        <div class="form-check">
+
+            <input class="form-check-input"
+                   type="radio"
+                   name="bagels">
+
+            <label class="form-check-label">
+                Skip
+            </label>
+
+        </div>
+
+    </div>
+
+    <!-- FRIDAY SUSHI -->
+
+    <div class="survey-question">
+
+        <h4 class="fw-bold">
+            Friday Sushi (Choose Up To 3)
+        </h4>
+
+        <div class="form-check">
+            <input class="form-check-input sushi-option"
+                   type="checkbox">
+            <label class="form-check-label">
+                Sweet Potato Roll
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input sushi-option"
+                   type="checkbox">
+            <label class="form-check-label">
+                Avocado Roll
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input sushi-option"
+                   type="checkbox">
+            <label class="form-check-label">
+                Pumpkin Tempura Roll
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input sushi-option"
+                   type="checkbox">
+            <label class="form-check-label">
+                Shrimp & Avocado Roll
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input sushi-option"
+                   type="checkbox">
+            <label class="form-check-label">
+                Tuna Roll
+            </label>
+        </div>
+
+    </div>
+
+    <!-- ICE CREAM -->
+
+    <div class="survey-question">
+
+        <h4 class="fw-bold">
+            Friday Ice Cream Social
+        </h4>
+
+        <div class="form-check">
+
+            <input class="form-check-input"
+                   type="radio"
+                   name="icecream">
+
+            <label class="form-check-label">
+                Yes, Count Me In
+            </label>
+
+        </div>
+
+        <div class="form-check">
+
+            <input class="form-check-input"
+                   type="radio"
+                   name="icecream">
+
+            <label class="form-check-label">
+                Skip
+            </label>
+
+        </div>
+
+    </div>
+
+    <button type="submit"
+            class="btn btn-primary-action px-5 py-3">
+
+        Submit Lunch Order
+
+    </button>
+
+</form>
 
         </div>
 
@@ -345,6 +457,28 @@
 
 </div>
     </div>
+<div class="modal fade" id="preferenceModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center border-0 p-4">
+                <div class="modal-body">
+                    <h3 class="fw-bold mb-3">Welcome to the Lunch Portal</h3>
+                    <p class="text-secondary mb-4">What are your preferences?</p>
+                    <div class="d-grid gap-2">
+                        <input type="radio" class="btn-check" name="dietPreference" id="prefVeg" value="Vegetarian">
+                        <label class="btn btn-outline-custom" for="prefVeg">Vegetarian</label>
+
+                        <input type="radio" class="btn-check" name="dietPreference" id="prefNonVeg" value="Non-Vegetarian">
+                        <label class="btn btn-outline-custom" for="prefNonVeg">Non-Vegetarian</label>
+
+                        <input type="radio" class="btn-check" name="dietPreference" id="prefBoth" value="Both" checked>
+                        <label class="btn btn-outline-custom" for="prefBoth">Both</label>
+                    </div>
+                    <button id="submitPreferenceBtn" class="btn btn-primary-action mt-4 px-4">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
       <!-- FOOTER -->
 
     <footer class="custom-footer py-5 text-white">
@@ -405,8 +539,9 @@
 </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
+<script src="script.js"></script>
     
 
 </body>

@@ -5,29 +5,184 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     // ==========================================
+    // USER PREFERENCE
+    // ==========================================
+
+    const preference =
+        localStorage.getItem("dietPreference");
+
+    // Preference Badge
+
+    const preferenceBadge =
+        document.getElementById(
+            "preferenceBadge"
+        );
+
+    if (
+        preference &&
+        preferenceBadge
+    ) {
+
+        preferenceBadge.textContent =
+            `Current Preference: ${preference}`;
+
+    }
+
+    // ==========================================
+    // SURVEY AUTO-FILL
+    // ==========================================
+
+    if (preference === "Vegetarian") {
+
+        document.getElementById(
+            "mondayVeg"
+        )?.click();
+
+        const tuesday =
+            document.getElementById(
+                "tuesdayChoice"
+            );
+
+        const wednesday =
+            document.getElementById(
+                "wednesdayChoice"
+            );
+
+        if (tuesday) {
+            tuesday.value = "veg";
+        }
+
+        if (wednesday) {
+            wednesday.value = "veg";
+        }
+
+    }
+
+    if (preference === "Non-Vegetarian") {
+
+        document.getElementById(
+            "mondayChicken"
+        )?.click();
+
+        const tuesday =
+            document.getElementById(
+                "tuesdayChoice"
+            );
+
+        const wednesday =
+            document.getElementById(
+                "wednesdayChoice"
+            );
+
+        if (tuesday) {
+            tuesday.value = "nonveg";
+        }
+
+        if (wednesday) {
+            wednesday.value = "nonveg";
+        }
+
+    }
+
+    if (preference === "Both") {
+
+        const tuesday =
+            document.getElementById(
+                "tuesdayChoice"
+            );
+
+        const wednesday =
+            document.getElementById(
+                "wednesdayChoice"
+            );
+
+        if (tuesday) {
+            tuesday.value = "both";
+        }
+
+        if (wednesday) {
+            wednesday.value = "both";
+        }
+
+    }
+
+    // ==========================================
+    // SUSHI LIMIT (MAX 3)
+    // ==========================================
+
+    const sushiOptions =
+        document.querySelectorAll(
+            ".sushi-option"
+        );
+
+    sushiOptions.forEach(option => {
+
+        option.addEventListener(
+            "change",
+            () => {
+
+                const selected =
+                    document.querySelectorAll(
+                        ".sushi-option:checked"
+                    );
+
+                if (selected.length > 3) {
+
+                    option.checked = false;
+
+                    alert(
+                        "Please select no more than 3 sushi options."
+                    );
+
+                }
+
+            }
+        );
+
+    });
+
+    // ==========================================
     // PREFERENCE MODAL
     // ==========================================
 
-    const preferenceModal =
-        document.getElementById("preferenceModal");
+    // ==========================================
+// PREFERENCE MODAL
+// ==========================================
 
-    const submitPreferenceBtn =
-        document.getElementById("submitPreferenceBtn");
+const preferenceModal =
+    document.getElementById(
+        "preferenceModal"
+    );
 
-    if (preferenceModal && submitPreferenceBtn) {
+const submitPreferenceBtn =
+    document.getElementById(
+        "submitPreferenceBtn"
+    );
 
-        const savedPreference =
-            localStorage.getItem("dietPreference");
+if (
+    preferenceModal &&
+    submitPreferenceBtn
+) {
 
-        if (!savedPreference) {
+    const savedPreference =
+        localStorage.getItem(
+            "dietPreference"
+        );
 
-            const modal =
-                new bootstrap.Modal(preferenceModal);
+    if (!savedPreference) {
 
-            modal.show();
-        }
+        const modal =
+            new bootstrap.Modal(
+                preferenceModal
+            );
 
-        submitPreferenceBtn.addEventListener("click", () => {
+        modal.show();
+
+    }
+
+    submitPreferenceBtn.addEventListener(
+        "click",
+        () => {
 
             const selectedOption =
                 document.querySelector(
@@ -52,37 +207,109 @@ document.addEventListener("DOMContentLoaded", () => {
                 modal.hide();
             }
 
-        });
+            location.reload();
 
-    }
+        }
+    );
 
-   
+}
+
     // ==========================================
     // CONTACT PAGE
     // ==========================================
 
     const contactForm =
-        document.getElementById("contactForm");
+        document.getElementById(
+            "contactForm"
+        );
 
     const contactSuccessModal =
-        document.getElementById("contactSuccessModal");
+        document.getElementById(
+            "contactSuccessModal"
+        );
 
-    if (contactForm && contactSuccessModal) {
+    if (
+        contactForm &&
+        contactSuccessModal
+    ) {
 
-        contactForm.addEventListener("submit", (event) => {
+        contactForm.addEventListener(
+            "submit",
+            (event) => {
 
-            event.preventDefault();
+                event.preventDefault();
 
-            const modal =
                 new bootstrap.Modal(
                     contactSuccessModal
-                );
+                ).show();
 
-            modal.show();
+                contactForm.reset();
 
-            contactForm.reset();
+            }
+        );
 
-        });
+    }
+
+    // ==========================================
+    // SURVEY SUBMIT + VALIDATION
+    // ==========================================
+
+    const lunchSurveyForm =
+        document.getElementById(
+            "lunchSurveyForm"
+        );
+
+    if (lunchSurveyForm) {
+
+        lunchSurveyForm.addEventListener(
+            "submit",
+            (event) => {
+
+                event.preventDefault();
+
+                const monday =
+                    document.querySelector(
+                        'input[name="monday"]:checked'
+                    );
+
+                const thursday =
+                    document.querySelector(
+                        'input[name="thursday"]:checked'
+                    );
+
+                const bagels =
+                    document.querySelector(
+                        'input[name="bagels"]:checked'
+                    );
+
+                const icecream =
+                    document.querySelector(
+                        'input[name="icecream"]:checked'
+                    );
+
+                if (
+                    !monday ||
+                    !thursday ||
+                    !bagels ||
+                    !icecream
+                ) {
+
+                    alert(
+                        "Please complete all required fields before submitting."
+                    );
+
+                    return;
+
+                }
+
+                new bootstrap.Modal(
+                    document.getElementById(
+                        "surveySuccessModal"
+                    )
+                ).show();
+
+            }
+        );
 
     }
 
@@ -91,38 +318,45 @@ document.addEventListener("DOMContentLoaded", () => {
     // ==========================================
 
     const updatesForm =
-        document.getElementById("updatesForm");
+        document.getElementById(
+            "updatesForm"
+        );
 
     const subscribeSuccessModal =
         document.getElementById(
             "subscribeSuccessModal"
         );
 
-    if (updatesForm && subscribeSuccessModal) {
+    if (
+        updatesForm &&
+        subscribeSuccessModal
+    ) {
 
-        updatesForm.addEventListener("submit", (event) => {
+        updatesForm.addEventListener(
+            "submit",
+            (event) => {
 
-            event.preventDefault();
+                event.preventDefault();
 
-            const updatesModal =
-                bootstrap.Modal.getInstance(
-                    document.getElementById("updatesModal")
-                );
+                const updatesModal =
+                    bootstrap.Modal.getInstance(
+                        document.getElementById(
+                            "updatesModal"
+                        )
+                    );
 
-            if (updatesModal) {
-                updatesModal.hide();
-            }
+                if (updatesModal) {
+                    updatesModal.hide();
+                }
 
-            const successModal =
                 new bootstrap.Modal(
                     subscribeSuccessModal
-                );
+                ).show();
 
-            successModal.show();
+                updatesForm.reset();
 
-            updatesForm.reset();
-
-        });
+            }
+        );
 
     }
 
@@ -131,22 +365,25 @@ document.addEventListener("DOMContentLoaded", () => {
     // ==========================================
 
     const stayUpdatedCanvas =
-        document.getElementById("stayUpdatedCanvas");
+        document.getElementById(
+            "stayUpdatedCanvas"
+        );
 
     if (
         stayUpdatedCanvas &&
-        localStorage.getItem("dietPreference") &&
-        !localStorage.getItem("stayUpdatedPrompt")
+        localStorage.getItem(
+            "dietPreference"
+        ) &&
+        !localStorage.getItem(
+            "stayUpdatedPrompt"
+        )
     ) {
 
         setTimeout(() => {
 
-            const offcanvas =
-                new bootstrap.Offcanvas(
-                    stayUpdatedCanvas
-                );
-
-            offcanvas.show();
+            new bootstrap.Offcanvas(
+                stayUpdatedCanvas
+            ).show();
 
             localStorage.setItem(
                 "stayUpdatedPrompt",
@@ -183,59 +420,6 @@ function resetStayUpdatedPrompt() {
 
     localStorage.removeItem(
         "stayUpdatedPrompt"
-    );
-
-}
-
-const preference =
-    localStorage.getItem("dietPreference");
-
-if (preference === "Vegetarian") {
-
-    const mondayVeg =
-        document.querySelector(
-            'input[name="monday"][value="Veg"]'
-        );
-
-    if(mondayVeg){
-        mondayVeg.checked = true;
-    }
-
-}
-
-if (preference === "Non-Vegetarian") {
-
-    const mondayChicken =
-        document.querySelector(
-            'input[name="monday"][value="Chicken"]'
-        );
-
-    if(mondayChicken){
-        mondayChicken.checked = true;
-    }
-
-}
-
-const lunchSurveyForm =
-    document.getElementById(
-        "lunchSurveyForm"
-    );
-
-if(lunchSurveyForm){
-
-    lunchSurveyForm.addEventListener(
-        "submit",
-        (event)=>{
-
-            event.preventDefault();
-
-            new bootstrap.Modal(
-                document.getElementById(
-                    "surveySuccessModal"
-                )
-            ).show();
-
-        }
     );
 
 }

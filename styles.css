@@ -853,3 +853,22 @@ body{
 
     filter: invert(1);
 }
+
+#preferenceBadge{
+
+    background:
+        rgba(132,72,150,.12);
+
+    border:
+        1px solid rgba(132,72,150,.25);
+
+    color:
+        var(--crocus);
+
+    font-weight:600;
+
+    border-radius:16px;
+
+    padding:16px 20px;
+}
+
