@@ -35,7 +35,10 @@
                 data-bs-toggle="collapse"
                 data-bs-target="#navbarNav">
 
-            <span class="navbar-toggler-icon"></span>
+           <span class="text-dark fw-bold fs-4">
+    ☰
+</span>
+`
 
         </button>
 
@@ -92,41 +95,255 @@
 
 </section>
 
-    <section class="survey-section py-5">
+   <section class="survey-section py-5">
 
-        <div class="container">
+    <div class="container">
 
-            <div class="survey-card-wrapper bg-white p-5">
+        <div class="survey-card-wrapper bg-white p-5">
 
-                <h2 class="fw-bold mb-2">
-                    Food Order Week of June 29, 2026
-                </h2>
+            <h2 class="fw-bold mb-2">
+                Food Order Week of July 6, 2026
+            </h2>
 
-                <p class="text-secondary mb-4">
-                    Please select your lunch preferences below.
-                </p>
+            <p class="text-secondary mb-5">
+                Please pick Veg / Non-Veg / Skip so that we can get an accurate count.
+            </p>
 
-             
-                    <div class="embed-container mb-4">
-                        <iframe src="https://forms.cloud.microsoft/pages/responsepage.aspx?id=OB7tQG6hIkadfEUWG2lp1XnYegb40QxPhJ188IloM8pUOEJEU1UwTkxEQThOOEM0TklVUFNQQ1JJNy4u&origin=lprLink&route=shorturl"
-                                allowfullscreen
-                                webkitallowfullscreen
-                                mozallowfullscreen
-                                msallowfullscreen>
-                        </iframe>
+            <form id="lunchSurveyForm">
+
+                <div class="mb-5">
+
+                    <h4 class="fw-bold">
+                        Monday - Papa John's Pizza
+                    </h4>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="monday" value="Veg">
+                        <label class="form-check-label">Cheese Pizza</label>
                     </div>
 
-                    
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="monday" value="Chicken">
+                        <label class="form-check-label">Chicken Pizza</label>
+                    </div>
 
-                
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="monday" value="Meat Lovers">
+                        <label class="form-check-label">Meat Lovers Pizza</label>
+                    </div>
+
+                </div>
+
+                <div class="mb-5">
+
+                    <h4 class="fw-bold">
+                        Tuesday - Pasta / South Indian
+                    </h4>
+
+                    <select class="form-select">
+
+                        <option>Half Veg Pasta + Half Chicken Pasta</option>
+
+                        <option>Veg Pasta Only</option>
+
+                        <option>Chicken Pasta Only</option>
+
+                        <option>South Indian (Veg)</option>
+
+                        <option>Skip</option>
+
+                    </select>
+
+                </div>
+
+                <div class="mb-5">
+
+                    <h4 class="fw-bold">
+                        Wednesday - Mediterranean
+                    </h4>
+
+                    <select class="form-select">
+
+                        <option>Half Veg + Half Non-Veg</option>
+
+                        <option>Veg Only</option>
+
+                        <option>Non-Veg Only</option>
+
+                        <option>Skip</option>
+
+                    </select>
+
+                </div>
+
+                <div class="mb-5">
+
+                    <h4 class="fw-bold">
+                        Thursday - Samosa & Dhokla
+                    </h4>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="thursday">
+                        <label class="form-check-label">
+                            1 Serving
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="thursday">
+                        <label class="form-check-label">
+                            Skip
+                        </label>
+                    </div>
+
+                </div>
+
+                <div class="mb-5">
+
+                    <h4 class="fw-bold">
+                        Friday Breakfast Bagels
+                    </h4>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="bagels">
+                        <label class="form-check-label">
+                            Yes, Count Me In
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="bagels">
+                        <label class="form-check-label">
+                            Skip
+                        </label>
+                    </div>
+
+                </div>
+
+                <div class="mb-5">
+
+                    <h4 class="fw-bold">
+                        Friday Sushi (Choose Up To 3)
+                    </h4>
+
+                    <div class="form-check">
+                        <input class="form-check-input sushi-option" type="checkbox">
+                        <label class="form-check-label">
+                            Sweet Potato Roll
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input sushi-option" type="checkbox">
+                        <label class="form-check-label">
+                            Avocado Roll
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input sushi-option" type="checkbox">
+                        <label class="form-check-label">
+                            Pumpkin Tempura Roll
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input sushi-option" type="checkbox">
+                        <label class="form-check-label">
+                            Shrimp & Avocado Roll
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input sushi-option" type="checkbox">
+                        <label class="form-check-label">
+                            Tuna Roll
+                        </label>
+                    </div>
+
+                </div>
+
+                <div class="mb-5">
+
+                    <h4 class="fw-bold">
+                        Friday Ice Cream Social
+                    </h4>
+
+                    <div class="form-check">
+
+                        <input class="form-check-input"
+                               type="radio"
+                               name="icecream">
+
+                        <label class="form-check-label">
+                            Yes, Count Me In
+                        </label>
+
+                    </div>
+
+                    <div class="form-check">
+
+                        <input class="form-check-input"
+                               type="radio"
+                               name="icecream">
+
+                        <label class="form-check-label">
+                            Skip
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <button type="submit"
+                        class="btn btn-primary-action px-5 py-3">
+
+                    Submit Lunch Order
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+<div class="modal fade"
+     id="surveySuccessModal"
+     tabindex="-1">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content text-center p-4">
+
+            <div class="modal-body">
+
+                <h3 class="fw-bold text-success">
+                    Order Submitted!
+                </h3>
+
+                <p class="text-secondary">
+
+                    Your lunch selections have been recorded.
+
+                </p>
+
+                <button class="btn btn-primary-action"
+                        data-bs-dismiss="modal">
+
+                    Close
+
+                </button>
 
             </div>
 
         </div>
 
-    </section>
+    </div>
 
-
+</div>
     </div>
       <!-- FOOTER -->
 

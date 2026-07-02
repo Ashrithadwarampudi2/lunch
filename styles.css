@@ -252,39 +252,62 @@ body{
 
 .survey-section{
 
+    min-height:100vh;
+
     background:
         radial-gradient(
-            circle at top right,
-            rgba(132,72,150,.20),
-            transparent 450px
+            circle at top left,
+            rgba(132,72,150,.22),
+            transparent 400px
         ),
 
         radial-gradient(
-            circle at bottom left,
-            rgba(54,187,244,.18),
-            transparent 450px
+            circle at bottom right,
+            rgba(54,187,244,.20),
+            transparent 500px
         ),
 
         linear-gradient(
-            180deg,
-            #fafbff,
-            #f2f3f8
+            135deg,
+            #f8f9ff,
+            #f0ebfa,
+            #edf7ff
         );
 
-    min-height:100vh;
+    padding:80px 0;
 }
+
 .survey-card-wrapper{
 
-    background:rgba(255,255,255,.92) !important;
+    max-width:1000px;
+
+    margin:auto;
+
+    background:rgba(255,255,255,.95) !important;
 
     border-radius:32px;
 
-    border:1px solid rgba(255,255,255,.7);
+    border:1px solid rgba(255,255,255,.75);
 
     box-shadow:
-        0 25px 60px rgba(0,0,0,.12);
+        0 25px 70px rgba(0,0,0,.12);
 
-    backdrop-filter:blur(10px);
+    backdrop-filter:blur(12px);
+}
+.survey-question{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    margin-bottom:25px;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.05);
+
+    border-left:6px solid var(--crocus);
 }
 
 .survey-item label{

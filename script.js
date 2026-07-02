@@ -186,3 +186,56 @@ function resetStayUpdatedPrompt() {
     );
 
 }
+
+const preference =
+    localStorage.getItem("dietPreference");
+
+if (preference === "Vegetarian") {
+
+    const mondayVeg =
+        document.querySelector(
+            'input[name="monday"][value="Veg"]'
+        );
+
+    if(mondayVeg){
+        mondayVeg.checked = true;
+    }
+
+}
+
+if (preference === "Non-Vegetarian") {
+
+    const mondayChicken =
+        document.querySelector(
+            'input[name="monday"][value="Chicken"]'
+        );
+
+    if(mondayChicken){
+        mondayChicken.checked = true;
+    }
+
+}
+
+const lunchSurveyForm =
+    document.getElementById(
+        "lunchSurveyForm"
+    );
+
+if(lunchSurveyForm){
+
+    lunchSurveyForm.addEventListener(
+        "submit",
+        (event)=>{
+
+            event.preventDefault();
+
+            new bootstrap.Modal(
+                document.getElementById(
+                    "surveySuccessModal"
+                )
+            ).show();
+
+        }
+    );
+
+}
